@@ -29,6 +29,29 @@ https://digital.lib.hkbu.edu.hk/api/tvweek/?start=11&limit=10
 https://digital.lib.hkbu.edu.hk/api/tvweek/?start=21&limit=10
 
 
+Example:
+
+import stanza
+import requests
+
+url = "https://digital.lib.hkbu.edu.hk/api/tvweek/api.php?issueNumber=18"
+r = requests.get(url)
+data = r.json()
+wordlist = data['Results'][0]['keywords']
+
+nlp = stanza.Pipeline(lang='zh', processors='tokenize,ner',tokenize_pretokenized=True)
+
+for w in wordlist:
+    doc = nlp(w)
+    print(*[f'entity: {ent.text}\ttype: {ent.type}' for sent in doc.sentences for ent in sent.ents], sep='\n')
+    
+    
+    
+    
+
+
+
+
 Note:
 - The digitized version of the periodical are avaialble on《中港電視。電影刊物資料庫》, Hong Kong Baptist University (https://digital.lib.hkbu.edu.hk/film-tv/).
 - The databases have these missing issues: 253, 254, 255, 257, 258, 259, 401, 402, 405, 408, 409, 410, 715
