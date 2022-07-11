@@ -7,22 +7,29 @@ Resource URL:
 https://digital.lib.hkbu.edu.hk/api/tvweek/
 
 
-The API  the cover thumbnail image
-```The API  the cover thumbnail image```
+The API outputs:
+ - the cover thumbnail image
 
 
-https://digital.lib.hkbu.edu.hk/api/tvweek/?issue=
+Browse Parameters:
+https://digital.lib.hkbu.edu.hk/api/tvweek/?issueNumber=1028
+https://digital.lib.hkbu.edu.hk/api/tvweek/?startIssueNumber=123&endIssueNumber=308
+https://digital.lib.hkbu.edu.hk/api/tvweek/?startDate=1985-01-01&endDate=1990-01-01
 
+
+Output limit:
+Note that each API query only returns results of 20 issues. To see more:
 https://digital.lib.hkbu.edu.hk/api/tvweek/?start=0&limit=300
 
-name format optional startDate yyyy-mm-dd yes endDate yyyy-mm-dd yes
-
-starIssueNumber int yes endIssueNumber int yes issueNumber int yes
 
 
-start int yes limit int yes
+Pages:
+https://digital.lib.hkbu.edu.hk/api/tvweek/?start=0&limit=10
+https://digital.lib.hkbu.edu.hk/api/tvweek/?start=11&limit=10
+https://digital.lib.hkbu.edu.hk/api/tvweek/?start=21&limit=10
 
 
+Note:
+- The digitized version of the periodical are avaialble on《中港電視。電影刊物資料庫》, Hong Kong Baptist University (https://digital.lib.hkbu.edu.hk/film-tv/).
+- The databases have these missing issues: 253, 254, 255, 257, 258, 259, 401, 402, 405, 408, 409, 410, 715
 
-
-The digitized version of the periodical are avaialble on《中港電視。電影刊物資料庫》, Hong Kong Baptist University (https://digital.lib.hkbu.edu.hk/film-tv/).
