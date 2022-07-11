@@ -4,7 +4,7 @@ TV Week is a weekly periodical published by Television Broadcasts Limited (TVB) 
 For more information of the periodical, visit: [https://zh.m.wikipedia.org/zh-hk/香港電視_(雜誌)](https://zh.m.wikipedia.org/zh-hk/香港電視_(雜誌)).
 
 The digitized version of the periodical are avaialble on [《中港電視。電影刊物資料庫》, Hong Kong Baptist University] (https://digital.lib.hkbu.edu.hk/film-tv/).
-
+This site was built using [GitHub Pages](https://pages.github.com/).
 
 
 
