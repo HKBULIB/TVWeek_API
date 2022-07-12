@@ -1,6 +1,6 @@
 # API for TV Week Magazine 《香港電視》
 
-TV Week is a weekly periodical published by Television Broadcasts Limited (TVB) between 1967 to 1997 in Hong Kong. For more information of the periodical, visit: [https://zh.m.wikipedia.org/zh-hk/香港電視_(雜誌)]( https://zh.m.wikipedia.org/zh-hk/香港電視_(雜誌) ).
+TV Week is a weekly periodical published by Television Broadcasts Limited (TVB) between 1967 to 1997 in Hong Kong. For more information of the periodical, visit: [https://zh.wikipedia.org/zh-hk/香港電視_(雜誌)]( https://zh.m.wikipedia.org/zh-hk/香港電視_(雜誌) ). A total of 1556 issues have been published. 
 
 The digitized version of the periodicals are avaialble on《中港電視。電影刊物資料庫》 (https://digital.lib.hkbu.edu.hk/film-tv/), Hong Kong Baptist University Library (Digital Initiative & Research Cluster). 
 
@@ -18,9 +18,13 @@ https://digital.lib.hkbu.edu.hk/api/tvweek/
  - list of keywords indexed from the contents
  - URL to digitized version on HKBU Library web server
 
+*Note:*
+- The dataset currently have these missing issues: 253, 254, 255, 257, 258, 259, 401, 402, 405, 408, 409, 410, 715
+
+
 ### Example Outputs
 
-Results returned by specific issue number (1088):
+**Example 1**: Results returned by specific issue number (1088):
 
 https://digital.lib.hkbu.edu.hk/api/tvweek/?issueNumber=1088
 ```
@@ -49,7 +53,7 @@ https://digital.lib.hkbu.edu.hk/api/tvweek/?issueNumber=1088
 }
 ```
 
-Results returned by specific range of issue numbers (130 - 135):
+**Example 2**: Results returned by specific range of issue numbers (130 - 135):
 
 https://digital.lib.hkbu.edu.hk/api/tvweek/?startIssueNumber=130&endIssueNumber=135
 ```
@@ -139,7 +143,7 @@ https://digital.lib.hkbu.edu.hk/api/tvweek/?startIssueNumber=130&endIssueNumber=
 ```
 
 
-Results returned by specific range of published date (01 March 1985 - 31 December 1985):
+**Example 3**: Results returned by specific range of published date (01 March 1985 - 31 December 1985):
 
 https://digital.lib.hkbu.edu.hk/api/tvweek/?startDate=1985-03-01&endDate=1985-12-31
 ```
@@ -218,43 +222,38 @@ https://digital.lib.hkbu.edu.hk/api/tvweek/?start=21&limit=10
 ```
 
 
+## Sample Usage (Python)
 
-
-Examples:
-
-Basic tallying of keywords from specific issues
-
-
-
-
-Named Entity Recognition from a specific issue
+**Sample 1**: Named Entity Recognition from a specific issue using Stanza (https://stanfordnlp.github.io/stanza/) Python package created by Stanford NLP Group.
 ```
 import stanza
 import requests
+import re   
 
-url = "https://digital.lib.hkbu.edu.hk/api/tvweek/api.php?issueNumber=18"
+url = "https://digital.lib.hkbu.edu.hk/api/tvweek/api.php?issueNumber=1112"
 r = requests.get(url)
 data = r.json()
 wordlist = data['Results'][0]['keywords']
 
+
 nlp = stanza.Pipeline(lang='zh', processors='tokenize,ner',tokenize_pretokenized=True)
+english_check = re.compile(r'[a-z]')
 
 for w in wordlist:
-    doc = nlp(w)
-    print(*[f'entity: {ent.text}\ttype: {ent.type}' for sent in doc.sentences for ent in sent.ents], sep='\n')
-    
-
+    if not(english_check.match(w)):
+        doc = nlp(w)
+        #print(*[f'entity: {ent.text}\ttype: {ent.type}' for sent in doc.sentences for ent in sent.ents], sep='\n')        
+        if(len(doc.sentences[0].ents))>0:
+            print("Text: " + doc.sentences[0].ents[0].text + "\t\t Entity: " + doc.sentences[0].ents[0].type)
 ```
 
 
 
-Face recognition on magazine cover thumbnail images
+
+**Sample 2**: Face recognition on magazine cover thumbnail images
     
     
 
 
 
-
-Note:
-- The databases have these missing issues: 253, 254, 255, 257, 258, 259, 401, 402, 405, 408, 409, 410, 715
 
