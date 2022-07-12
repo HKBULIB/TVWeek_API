@@ -20,7 +20,7 @@ https://digital.lib.hkbu.edu.hk/api/tvweek/
  - URL to digitized version on HKBU Library web server
 
 *Note:*
-- The dataset currently have these missing issues: 253, 254, 255, 257, 258, 259, 401, 402, 405, 408, 409, 410, 715
+- The following issues are currently missing from the dataset: 253, 254, 255, 257, 258, 259, 401, 402, 405, 408, 409, 410, 715
 
 
 
