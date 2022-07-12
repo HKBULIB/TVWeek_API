@@ -100,7 +100,7 @@ The result of the Python program outputs images with green bounding boxes on det
 
 
 
-### API Output
+## API Output
 
 The following examples show how the API can be used to output data of specific issues from the dataset.
 
