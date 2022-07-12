@@ -100,9 +100,9 @@ The result of the Python program outputs images with green bounding boxes on det
 
 
 
-## API Output
+## Query Parameters
 
-The following examples show how the API can be used to output data of specific issues from the dataset.
+The following examples show how to use different query parameters to output data of specific issues from the dataset.
 
 **Example 1**: Results returned by specific issue number (#1088):
 
