@@ -36,7 +36,7 @@ import stanza
 import requests
 import re   
 
-url = "https://digital.lib.hkbu.edu.hk/api/tvweek/api.php?issueNumber=118"
+url = "https://digital.lib.hkbu.edu.hk/api/tvweek/?issueNumber=118"
 r = requests.get(url)
 data = r.json()
 wordlist = data['Results'][0]['keywords']
