@@ -1,9 +1,5 @@
 # API for TV Week Magazine 《香港電視》
 
-JUMP
-[here](### Example Outputs)
-
-
 ## Background
 TV Week is a weekly periodical published by Television Broadcasts Limited (TVB) between 1967 to 1997 in Hong Kong. For more information of the periodical, visit: [https://zh.wikipedia.org/zh-hk/香港電視_(雜誌)]( https://zh.m.wikipedia.org/zh-hk/香港電視_(雜誌) ). A total of 1556 issues have been published. 
 
@@ -253,7 +249,7 @@ for w in wordlist:
 ```
 ---
 
-**Sample 2**: Face recognition on magazine cover thumbnail images using OpenCV image recognition package
+**Sample 2**: Face recognition on magazine cover thumbnail images using OpenCV (https://opencv.org/) image recognition package
 ```
 import matplotlib.pyplot as plt
 import cv2
