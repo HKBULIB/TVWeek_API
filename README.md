@@ -247,6 +247,10 @@ for w in wordlist:
         if(len(doc.sentences[0].ents))>0:
             print("Text: " + doc.sentences[0].ents[0].text + "\t\t Entity: " + doc.sentences[0].ents[0].type)
 ```
+The result of the Python program outputs a list of keywords from issue #118 and the recognized entity name.
+
+![alt text](https://raw.githubusercontent.com/choweric-hkbu/TVWeek/main/ner_output.png "Named Entity Recognition Output")
+
 ---
 
 **Sample 2**: Face recognition on multiple cover thumbnail images using OpenCV (https://opencv.org/) image recognition package
@@ -291,6 +295,6 @@ for result in data['Results']:
 
 The result of the Python program outputs images with green bounding boxes on detected faces.
 
-![alt text](https://github.com/choweric-hkbu/TVWeek/blob/54890d0573ecd8775f34177962152e34e87f05e6/face_recognition_output.png "Face Recognition Output")
+![alt text](https://raw.githubusercontent.com/choweric-hkbu/TVWeek/main/face_recognition_output.png "Face Recognition Output")
 
 
