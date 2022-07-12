@@ -249,7 +249,7 @@ for w in wordlist:
 ```
 ---
 
-**Sample 2**: Face recognition on magazine cover thumbnail images using OpenCV (https://opencv.org/) image recognition package
+**Sample 2**: Face recognition on multiple cover thumbnail images using OpenCV (https://opencv.org/) image recognition package
 ```
 import matplotlib.pyplot as plt
 import cv2
