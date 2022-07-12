@@ -15,7 +15,7 @@ https://digital.lib.hkbu.edu.hk/api/tvweek/
  The API returns the following output (by issues):
  - issue number
  - published date
- - URL of cover page thumbnail image
+ - URL of cover page thumbnail image (345 x 500 px)
  - list of keywords indexed from the contents
  - URL to digitized version on HKBU Library web server
 
@@ -288,8 +288,8 @@ for result in data['Results']:
     plt.imshow(img)
     plt.show()
 ```  
-    
 
 
+![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
 
 
