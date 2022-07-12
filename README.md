@@ -204,17 +204,20 @@ https://digital.lib.hkbu.edu.hk/api/tvweek/?startDate=1985-03-01&endDate=1985-12
 }
 ```
 
-
-
-Output limit:
-Note that each API query only returns results of 20 issues. To return more:
+### Output Limit
+Note that each API query only returns a JSON result of 20 issues. To return more issues, use *limit* parameter
+```
 https://digital.lib.hkbu.edu.hk/api/tvweek/?start=0&limit=300
+```
 
-
-Pages:
+Using a combination of *limit* and *start* parameters, one can also applies pagniation when scraping the dataset:
+```
 https://digital.lib.hkbu.edu.hk/api/tvweek/?start=0&limit=10
 https://digital.lib.hkbu.edu.hk/api/tvweek/?start=11&limit=10
 https://digital.lib.hkbu.edu.hk/api/tvweek/?start=21&limit=10
+```
+
+
 
 
 Examples:
