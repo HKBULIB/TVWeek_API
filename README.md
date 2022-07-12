@@ -23,7 +23,86 @@ https://digital.lib.hkbu.edu.hk/api/tvweek/
 - The dataset currently have these missing issues: 253, 254, 255, 257, 258, 259, 401, 402, 405, 408, 409, 410, 715
 
 
-### Example Outputs
+
+## Sample Usage (Python)
+
+**Sample 1**: Named Entity Recognition (NER) of keywords from a specific issue (#118) using Stanza (https://stanfordnlp.github.io/stanza/) Python package created by Stanford NLP Group.
+```
+import stanza
+import requests
+import re   
+
+url = "https://digital.lib.hkbu.edu.hk/api/tvweek/api.php?issueNumber=118"
+r = requests.get(url)
+data = r.json()
+wordlist = data['Results'][0]['keywords']
+
+
+nlp = stanza.Pipeline(lang='zh', processors='tokenize,ner',tokenize_pretokenized=True)
+english_check = re.compile(r'[a-z]')
+
+for w in wordlist:
+    if not(english_check.match(w)):
+        doc = nlp(w)
+        #print(*[f'entity: {ent.text}\ttype: {ent.type}' for sent in doc.sentences for ent in sent.ents], sep='\n')        
+        if(len(doc.sentences[0].ents))>0:
+            print("Text: " + doc.sentences[0].ents[0].text + "\t\t Entity: " + doc.sentences[0].ents[0].type)
+```
+The result of the Python program outputs a list of keywords from issue #118 and the recognized entity name.
+
+![alt text](https://raw.githubusercontent.com/choweric-hkbu/TVWeek/main/ner_output.png "Named Entity Recognition Output")
+
+---
+
+**Sample 2**: Face recognition on multiple cover thumbnail images using OpenCV (https://opencv.org/) image recognition package
+```
+import matplotlib.pyplot as plt
+import cv2
+import requests
+from urllib.request import urlopen
+import numpy as np
+
+
+# Load the face cascade for CV2 processing
+face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+
+
+url = "https://digital.lib.hkbu.edu.hk/api/tvweek/?startIssueNumber=1150&endIssueNumber=1155"
+r = requests.get(url)
+data = r.json()
+
+
+for result in data['Results']:
+    cover_img = result['coverThumbnail']
+    
+    req = urlopen(cover_img)
+    arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
+    img = cv2.imdecode(arr, -1) # 'Load it as it is'
+    #img = cv2.imread(cover_img)
+        
+    # Convert image into grayscale
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  
+    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
+        
+    # Detect faces and draw rectangle around the faces
+    faces = face_cascade.detectMultiScale(gray, 1.1, 4)    
+    for (x, y, w, h) in faces:
+        cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
+            
+    # Display the output
+    plt.imshow(img)
+    plt.show()
+```  
+
+The result of the Python program outputs images with green bounding boxes on detected faces.
+
+![alt text](https://raw.githubusercontent.com/choweric-hkbu/TVWeek/main/face_recognition_output.png "Face Recognition Output")
+
+
+
+### API Output
+
+The following examples show how the API can be used to output data of specific issues from the dataset.
 
 **Example 1**: Results returned by specific issue number (#1088):
 
@@ -221,80 +300,5 @@ https://digital.lib.hkbu.edu.hk/api/tvweek/?start=0&limit=10
 https://digital.lib.hkbu.edu.hk/api/tvweek/?start=11&limit=10
 https://digital.lib.hkbu.edu.hk/api/tvweek/?start=21&limit=10
 ```
-
-
-## Sample Usage (Python)
-
-**Sample 1**: Named Entity Recognition (NER) of keywords from a specific issue (#118) using Stanza (https://stanfordnlp.github.io/stanza/) Python package created by Stanford NLP Group.
-```
-import stanza
-import requests
-import re   
-
-url = "https://digital.lib.hkbu.edu.hk/api/tvweek/api.php?issueNumber=118"
-r = requests.get(url)
-data = r.json()
-wordlist = data['Results'][0]['keywords']
-
-
-nlp = stanza.Pipeline(lang='zh', processors='tokenize,ner',tokenize_pretokenized=True)
-english_check = re.compile(r'[a-z]')
-
-for w in wordlist:
-    if not(english_check.match(w)):
-        doc = nlp(w)
-        #print(*[f'entity: {ent.text}\ttype: {ent.type}' for sent in doc.sentences for ent in sent.ents], sep='\n')        
-        if(len(doc.sentences[0].ents))>0:
-            print("Text: " + doc.sentences[0].ents[0].text + "\t\t Entity: " + doc.sentences[0].ents[0].type)
-```
-The result of the Python program outputs a list of keywords from issue #118 and the recognized entity name.
-
-![alt text](https://raw.githubusercontent.com/choweric-hkbu/TVWeek/main/ner_output.png "Named Entity Recognition Output")
-
----
-
-**Sample 2**: Face recognition on multiple cover thumbnail images using OpenCV (https://opencv.org/) image recognition package
-```
-import matplotlib.pyplot as plt
-import cv2
-import requests
-from urllib.request import urlopen
-import numpy as np
-
-
-# Load the face cascade for CV2 processing
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
-
-
-url = "https://digital.lib.hkbu.edu.hk/api/tvweek/?startIssueNumber=1150&endIssueNumber=1155"
-r = requests.get(url)
-data = r.json()
-
-
-for result in data['Results']:
-    cover_img = result['coverThumbnail']
-    
-    req = urlopen(cover_img)
-    arr = np.asarray(bytearray(req.read()), dtype=np.uint8)
-    img = cv2.imdecode(arr, -1) # 'Load it as it is'
-    #img = cv2.imread(cover_img)
-        
-    # Convert image into grayscale
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)  
-    gray = cv2.cvtColor(img, cv2.COLOR_RGB2GRAY)
-        
-    # Detect faces and draw rectangle around the faces
-    faces = face_cascade.detectMultiScale(gray, 1.1, 4)    
-    for (x, y, w, h) in faces:
-        cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
-            
-    # Display the output
-    plt.imshow(img)
-    plt.show()
-```  
-
-The result of the Python program outputs images with green bounding boxes on detected faces.
-
-![alt text](https://raw.githubusercontent.com/choweric-hkbu/TVWeek/main/face_recognition_output.png "Face Recognition Output")
 
 
