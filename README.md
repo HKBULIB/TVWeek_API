@@ -305,4 +305,8 @@ https://digital.lib.hkbu.edu.hk/api/tvweek/?start=11&limit=10
 https://digital.lib.hkbu.edu.hk/api/tvweek/?start=21&limit=10
 ```
 
+## CC License
 
+![alt text]([https://raw.githubusercontent.com/choweric-hkbu/TVWeek/main/face_recognition_output.png](https://raw.githubusercontent.com/choweric-hkbu/TVWeek/main/ccbync4_license.png) "Face Recognition Output")
+
+https://creativecommons.org/licenses/by-nc/4.0/
