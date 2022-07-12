@@ -249,7 +249,7 @@ for w in wordlist:
 ```
 
 
-**Sample 2**: Face recognition on magazine cover thumbnail images
+**Sample 2**: Face recognition on magazine cover thumbnail images using OpenCV image recognition package
 ```
 import matplotlib.pyplot as plt
 import cv2
@@ -289,7 +289,8 @@ for result in data['Results']:
     plt.show()
 ```  
 
+The result of the Python program outputs images with green bounding boxes on detected faces.
 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/choweric-hkbu/TVWeek/blob/54890d0573ecd8775f34177962152e34e87f05e6/face_recognition_output.png "Face Recognition Output")
 
 
