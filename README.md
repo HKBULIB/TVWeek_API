@@ -2,20 +2,23 @@
 
 TV Week is a weekly periodical published by Television Broadcasts Limited (TVB) between 1967 to 1997 in Hong Kong. For more information of the periodical, visit: [https://zh.m.wikipedia.org/zh-hk/香港電視_(雜誌)]( https://zh.m.wikipedia.org/zh-hk/香港電視_(雜誌) ).
 
-The digitized version of the periodical are avaialble on《中港電視。電影刊物資料庫》, Hong Kong Baptist University (https://digital.lib.hkbu.edu.hk/film-tv/).
+The digitized version of the periodical are avaialble on《中港電視。電影刊物資料庫》 (https://digital.lib.hkbu.edu.hk/film-tv/), Hong Kong Baptist University Library (Digital Initiative & Research Cluster). 
 
 
-### Resource URL
+## Resource URL
 ```
 https://digital.lib.hkbu.edu.hk/api/tvweek/
 ```
 
-The API outputs:
- - the cover thumbnail image
- - list of keywords as indexed by Hong Kong Baptist University Library (Digital Initiative & Research Cluster). 
+## API Outputs
+ The API returns the following output (by issues)
+ - issue number
+ - published date
+ - URL of cover page thumbnail image
+ - list of keywords indexed from the contents
+ - URL to digitized version on HKBU Library web server
 
-
-Browse Parameters:
+### Example Browse Parameters:
 https://digital.lib.hkbu.edu.hk/api/tvweek/?issueNumber=1028
 https://digital.lib.hkbu.edu.hk/api/tvweek/?startIssueNumber=123&endIssueNumber=308
 https://digital.lib.hkbu.edu.hk/api/tvweek/?startDate=1985-01-01&endDate=1990-01-01
