@@ -138,10 +138,70 @@ https://digital.lib.hkbu.edu.hk/api/tvweek/?startIssueNumber=130&endIssueNumber=
 }
 ```
 
-Results returned by specific range of published date (01 March 1985 - 31 December 1990):
 
-https://digital.lib.hkbu.edu.hk/api/tvweek/?startDate=1985-03-01&endDate=1990-12-31
+Results returned by specific range of published date (01 March 1985 - 31 December 1985):
+
+https://digital.lib.hkbu.edu.hk/api/tvweek/?startDate=1985-03-01&endDate=1985-12-31
 ```
+{
+    "totalResults": 43,
+    "Results": [
+        {
+            "issueNumber": 905,
+            "publishedDate": "1985-03-07T00:00:00Z",
+            "coverThumbnail": "https:\/\/storage.lib.hkbu.edu.hk\/tvweek\/Thumbnail\/905\/905_001.jpg",
+            "keywords": [
+                "婦女新姿",
+                "汪明荃",
+                ...
+                "夢幻之旋律",
+                "大地旅運社"
+            ],
+            "url": "https:\/\/digital.lib.hkbu.edu.hk\/film-tv\/magazines\/yes\/years\/1985\/books\/905"
+        },
+        {
+            "issueNumber": 906,
+            "publishedDate": "1985-03-14T00:00:00Z",
+            "coverThumbnail": "https:\/\/storage.lib.hkbu.edu.hk\/tvweek\/Thumbnail\/906\/906_001.jpg",
+            "keywords": [
+                "歡樂今宵",
+                "張國榮",
+                ...
+                "奧莉花紐頓莊",
+                "奪標"
+            ],
+            "url": "https:\/\/digital.lib.hkbu.edu.hk\/film-tv\/magazines\/yes\/years\/1985\/books\/906"
+        },
+        ...
+        ...
+        {
+            "issueNumber": 923,
+            "publishedDate": "1985-07-11T00:00:00Z",
+            "coverThumbnail": "https:\/\/storage.lib.hkbu.edu.hk\/tvweek\/Thumbnail\/923\/923_001.jpg",
+            "keywords": [
+                "新秀歌唱大賽",
+                "婦女新姿",
+                ...
+                "何文匯",
+                "保治靈"
+            ],
+            "url": "https:\/\/digital.lib.hkbu.edu.hk\/film-tv\/magazines\/yes\/years\/1985\/books\/923"
+        },
+        {
+            "issueNumber": 924,
+            "publishedDate": "1985-07-18T00:00:00Z",
+            "coverThumbnail": "https:\/\/storage.lib.hkbu.edu.hk\/tvweek\/Thumbnail\/924\/924_001.jpg",
+            "keywords": [
+                "歡樂今宵",
+                "香港電視",
+                 ...
+                "周生生珠寶金行有限公司",
+                "周繩武"
+            ],
+            "url": "https:\/\/digital.lib.hkbu.edu.hk\/film-tv\/magazines\/yes\/years\/1985\/books\/924"
+        }
+    ]
+}
 ```
 
 
