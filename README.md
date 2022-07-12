@@ -2,7 +2,7 @@
 
 TV Week is a weekly periodical published by Television Broadcasts Limited (TVB) between 1967 to 1997 in Hong Kong. For more information of the periodical, visit: [https://zh.m.wikipedia.org/zh-hk/香港電視_(雜誌)]( https://zh.m.wikipedia.org/zh-hk/香港電視_(雜誌) ).
 
-The digitized version of the periodical are avaialble on《中港電視。電影刊物資料庫》 (https://digital.lib.hkbu.edu.hk/film-tv/), Hong Kong Baptist University Library (Digital Initiative & Research Cluster). 
+The digitized version of the periodicals are avaialble on《中港電視。電影刊物資料庫》 (https://digital.lib.hkbu.edu.hk/film-tv/), Hong Kong Baptist University Library (Digital Initiative & Research Cluster). 
 
 
 ## Resource URL
@@ -21,6 +21,7 @@ https://digital.lib.hkbu.edu.hk/api/tvweek/
 ### Example Outputs
 
 Results returned by specific issue number (1088):
+
 https://digital.lib.hkbu.edu.hk/api/tvweek/?issueNumber=1088
 ```
 {
@@ -49,11 +50,96 @@ https://digital.lib.hkbu.edu.hk/api/tvweek/?issueNumber=1088
 ```
 
 Results returned by specific range of issue numbers (130 - 135):
+
 https://digital.lib.hkbu.edu.hk/api/tvweek/?startIssueNumber=130&endIssueNumber=135
 ```
+{
+    "totalResults": 6,
+    "Results": [
+        {
+            "issueNumber": 130,
+            "publishedDate": "1970-05-05T00:00:00Z",
+            "coverThumbnail": "https:\/\/storage.lib.hkbu.edu.hk\/tvweek\/Thumbnail\/130\/130_001.jpg",
+            "keywords": [
+                "沈殿霞",
+                "神偷諜影",
+                ...
+                "張瑛",
+                "張英才"
+            ],
+            "url": "https:\/\/digital.lib.hkbu.edu.hk\/film-tv\/magazines\/yes\/years\/1970\/books\/130"
+        },
+        {
+            "issueNumber": 131,
+            "publishedDate": "1970-05-12T00:00:00Z",
+            "coverThumbnail": "https:\/\/storage.lib.hkbu.edu.hk\/tvweek\/Thumbnail\/131\/131_001.jpg",
+            "keywords": [
+                "歡樂今宵",
+                "張瑛",
+                 ...
+                "安杜披雲",
+                "安東尼巴素"
+            ],
+            "url": "https:\/\/digital.lib.hkbu.edu.hk\/film-tv\/magazines\/yes\/years\/1970\/books\/131"
+        },
+        {
+            "issueNumber": 132,
+            "publishedDate": "1970-05-19T00:00:00Z",
+            "coverThumbnail": "https:\/\/storage.lib.hkbu.edu.hk\/tvweek\/Thumbnail\/132\/132_001.jpg",
+            "keywords": [
+                "歡樂今宵",
+                "歡樂家庭",
+                 ...
+                "安鐸",
+                "宋惠慈"
+            ],
+            "url": "https:\/\/digital.lib.hkbu.edu.hk\/film-tv\/magazines\/yes\/years\/1970\/books\/132"
+        },
+        {
+            "issueNumber": 133,
+            "publishedDate": "1970-05-26T00:00:00Z",
+            "coverThumbnail": "https:\/\/storage.lib.hkbu.edu.hk\/tvweek\/Thumbnail\/133\/133_001.jpg",
+            "keywords": [
+                "歡樂今宵",
+                "兒童節目",
+                 ...
+                "夢會牡丹亭",
+                "奇蓮伊士活"
+            ],
+            "url": "https:\/\/digital.lib.hkbu.edu.hk\/film-tv\/magazines\/yes\/years\/1970\/books\/133"
+        },
+        {
+            "issueNumber": 134,
+            "publishedDate": "1970-06-02T00:00:00Z",
+            "coverThumbnail": "https:\/\/storage.lib.hkbu.edu.hk\/tvweek\/Thumbnail\/134\/134_001.jpg",
+            "keywords": [
+                "歡樂今宵",
+                "羅拔韋納",
+                 ...
+                "大衛白賴仁",
+                "大衛花拉"
+            ],
+            "url": "https:\/\/digital.lib.hkbu.edu.hk\/film-tv\/magazines\/yes\/years\/1970\/books\/134"
+        },
+        {
+            "issueNumber": 135,
+            "publishedDate": "1970-06-09T00:00:00Z",
+            "coverThumbnail": "https:\/\/storage.lib.hkbu.edu.hk\/tvweek\/Thumbnail\/135\/135_001.jpg",
+            "keywords": [
+                "歡樂今宵",
+                "劉家傑",
+                 ...
+                "喧尼斯鮑寧",
+                "噢多可愛的戰爭"
+            ],
+            "url": "https:\/\/digital.lib.hkbu.edu.hk\/film-tv\/magazines\/yes\/years\/1970\/books\/135"
+        }
+    ]
+}
 ```
 
 Results returned by specific range of published date (01 March 1985 - 31 December 1990):
+
 https://digital.lib.hkbu.edu.hk/api/tvweek/?startDate=1985-03-01&endDate=1990-12-31
 ```
 ```
