@@ -30,7 +30,7 @@ https://digital.lib.hkbu.edu.hk/api/tvweek/
 
 ## Sample Usage (Python)
 
-**Sample 1**: Named Entity Recognition (NER) of keywords from a specific issue (#118) using Stanza (https://stanfordnlp.github.io/stanza/) Python package created by Stanford NLP Group.
+**Sample 1**: Named Entity Recognition (NER) of Chinese keywords from a specific issue (#118) using Stanza (https://stanfordnlp.github.io/stanza/) Python package created by Stanford NLP Group.
 ```
 import stanza
 import requests
