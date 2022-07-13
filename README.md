@@ -21,7 +21,7 @@ https://digital.lib.hkbu.edu.hk/api/tvweek/
  - published date
  - URL of cover page thumbnail image (345 x 500 px)
  - list of keywords indexed from the contents
- - URL to digitized version on HKBU Library web server
+ - URL of digitized version on 《中港電視。電影刊物資料庫》(HKBU Library)
 
 *Note:*
 - The following issues are currently missing from the dataset: 253, 254, 255, 257, 258, 259, 401, 402, 405, 408, 409, 410, 715
