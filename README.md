@@ -306,6 +306,6 @@ https://digital.lib.hkbu.edu.hk/api/tvweek/?start=21&limit=10
 ```
 
 ## License
-![alt text](https://raw.githubusercontent.com/choweric-hkbu/TVWeek/main/ccbync4_license.png "CC License")
+![alt text](https://mirrors.creativecommons.org/presskit/buttons/88x31/png/by-nc.png "CC License")
 
 https://creativecommons.org/licenses/by-nc/4.0/
