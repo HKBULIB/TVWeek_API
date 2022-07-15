@@ -23,11 +23,6 @@ https://digital.lib.hkbu.edu.hk/api/tvweek/
  - list of keywords indexed from the contents
  - URL of digitized version on 《中港電視。電影刊物資料庫》(HKBU Library)
 
-*Note:*
-- The following issues are currently missing from the dataset: 253, 254, 255, 257, 258, 259, 401, 402, 405, 408, 409, 410, 715
-
-
-
 ## Sample Usage (Python)
 
 **Sample 1**: Named Entity Recognition (NER) of Chinese keywords from a specific issue (#118) using Stanza Python package created by Stanford NLP Group (https://stanfordnlp.github.io/stanza/).
