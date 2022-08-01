@@ -42,8 +42,7 @@ english_check = re.compile(r'[a-z]')
 
 for w in wordlist:
     if not(english_check.match(w)):
-        doc = nlp(w)
-        #print(*[f'entity: {ent.text}\ttype: {ent.type}' for sent in doc.sentences for ent in sent.ents], sep='\n')        
+        doc = nlp(w)        
         if(len(doc.sentences[0].ents))>0:
             print("Text: " + doc.sentences[0].ents[0].text + "\t\t Entity: " + doc.sentences[0].ents[0].type)
 ```
